@@ -23,11 +23,11 @@ digit := "0" | ... | "9"
 
 Constants
 
-Integer – rule:
+Integer - rule:
 cInteger := ["+" | "-"]digit{digit}
-Character – rule:
+Character - rule:
 cCharacter :=""" (letter | digit | "_") """
-String – rule 
+String - rule 
 cString :=  """ {letter | digit | "_"} """
-Float – rule: 
+Float - rule: 
 cFloat := cInteger[","digit{digit}]
