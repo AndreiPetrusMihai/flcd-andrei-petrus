@@ -18,8 +18,8 @@ int char string float
 
 Identifier:  -a sequence of letters and digits that has a length of at least 1
 identifier := letter{letter | digit | "_"}
-letter := "a"| … | "z" | "A" | … | "Z"
-digit := "0" | … | "9"
+letter := "a"| ... | "z" | "A" | ... | "Z"
+digit := "0" | ... | "9"
 
 Constants
 

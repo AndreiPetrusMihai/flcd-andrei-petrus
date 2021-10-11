@@ -1,7 +1,7 @@
 Syntax:
 identifier := letter{letter | digit | "_"}
-letter := "a"| … | "z" | "A" | … | "Z"
-digit := "0" | … | "9"
+letter := "a"| ... | "z" | "A" | ... | "Z"
+digit := "0" | ... | "9"
 
 cInteger := ["+" | "-"]digit{digit}
 cCharacter := letter | digit
