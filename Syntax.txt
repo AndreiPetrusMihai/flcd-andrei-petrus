@@ -1,0 +1,37 @@
+Syntax:
+identifier := letter{letter | digit | “_”}
+letter := “a”| … | “z” | “A” | … | “Z”
+digit := “0” | … | “9”
+
+cInteger := [“+” | “-”]digit{digit}
+cCharacter := letter | digit
+cString := {cCharacter}
+cFloat := cInteger[“,”digit{digit}]
+number := cInteger | cFloat
+
+type := “int” | “float” | “string” | “char”
+arithmeticOperators := “*” | “/” | “+” | “-”
+relationOperators := “<” | “<=” | “==” | “!=” | “>=” | “>”
+mathExpression := [mathExpression arithmeticOperators] number
+stringExpression := [stringExpression “+”] (cString | cChar)
+expression := mathExpression | stringExpression
+
+arrayDeclaration := array type “[“cInteger”]”
+simpleDeclaration := type indentifier | arrayDeclaration
+declarationStmt := simpleDeclaration | declarationAssignment
+declarationAssignment := declaration “=” expression
+
+condition := [expression relationOperators] expression
+ 
+ioStmt := (“read” | “write”) “(” identifier “)”
+
+stmt := (ifStmt | assignStmt | ioStmt | declarationStmt)“;” | (forStmt|whileStmt)
+
+stmtList := {stmt}
+assignStmt := identifier “=” (mathExpression | stringExpression)
+
+ifStmt := “if” “(“ condition “)” “{” stmtList “}” [ “else” “{“ stmtList“}” ]
+forStmt := “for””(“declarationAssignment“;” condition “;” assignStmt “)” “{” stmtList “}”
+whileStmt := “while” “(” condition “)” “{” stmtList “}”
+
+program := “###”stmtList“###”
