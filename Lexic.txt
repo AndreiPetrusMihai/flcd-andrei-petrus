@@ -20,11 +20,12 @@ Identifier:  -a sequence of letters and digits that has a length of at least 1
 identifier := letter{letter | digit | "_"}
 letter := "a"| ... | "z" | "A" | ... | "Z"
 digit := "0" | ... | "9"
+nonZeroDigit := "1" | ... | "9"
 
 Constants
 
 Integer - rule:
-cInteger := ["+" | "-"]digit{digit}
+cInteger := ["+" | "-"]nonZeroDigit{digit}
 Character - rule:
 cCharacter :=""" (letter | digit | "_") """
 String - rule 
