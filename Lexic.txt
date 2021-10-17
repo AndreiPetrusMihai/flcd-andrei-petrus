@@ -1,0 +1,34 @@
+Alphabet: 
+a-z and A-Z
+0-9 digits
+'_'  ',' characters
+
+Lexic:
+ operators:
+ / * + - <= == != >= =
+separators: 
+() {} : ; ###
+reserved words: 
+array
+if else 
+while 
+for
+read write 
+int char string float
+
+Identifier:  -a sequence of letters and digits that has a length of at least 1
+identifier := letter{letter | digit | "_"}
+letter := "a"| ... | "z" | "A" | ... | "Z"
+digit := "0" | ... | "9"
+nonZeroDigit := "1" | ... | "9"
+
+Constants
+
+Integer - rule:
+cInteger := ["+" | "-"]nonZeroDigit{digit}
+Character - rule:
+cCharacter :=""" (letter | digit | "_") """
+String - rule 
+cString :=  """ {letter | digit | "_"} """
+Float - rule: 
+cFloat := cInteger[","digit{digit}]
