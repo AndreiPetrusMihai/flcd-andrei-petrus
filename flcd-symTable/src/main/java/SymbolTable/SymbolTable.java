@@ -39,14 +39,14 @@ public class SymbolTable {
             Entry currentEntry = entryList.get(pos);
             int depth = 0;
             while(currentEntry.getNextEntry() != null) {
-                if(currentEntry.getSymbol() == symbol)
+                if(currentEntry.getSymbol().equals(symbol))
                     return new Pair<>(pos,depth);
 
                 depth++;
                 currentEntry = currentEntry.getNextEntry();
             }
 
-            if(currentEntry.getSymbol() == symbol)
+            if(currentEntry.getSymbol().equals(symbol))
                 return new Pair<>(pos,depth);
 
             CURRENT_SIZE++;
@@ -82,5 +82,9 @@ public class SymbolTable {
             System.out.println();
 
         }
+    }
+
+    public Vector<Entry> getEntryList() {
+        return entryList;
     }
 }
