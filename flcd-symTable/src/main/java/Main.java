@@ -1,18 +1,15 @@
-import SymbolTable.SymbolTable;
+import Scanner.FileScanner;
 
 public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        SymbolTable table = new SymbolTable();
-        System.out.println(table.pos("a"));
-        System.out.println(table.pos("5"));
-        System.out.println(table.pos("b"));
-        System.out.println(table.pos("a"));
-        System.out.println(table.pos("2"));
+    // SymbolTable table = new SymbolTable();
+        try {
+            FileScanner scanner = new FileScanner("src/main/java/p1.txt", "src/main/java/tokens.txt");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-
-
-        table.print();
     }
 }

@@ -1,0 +1,11 @@
+###
+int a = 1.1 ;
+int b ;
+read ( a )
+read ( b )
+if ( a == b ) {
+write ( "They_are_equal" ) ;
+} else {
+write ( "They_are_not_equal" ) ;
+}
+###
