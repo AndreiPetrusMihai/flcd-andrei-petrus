@@ -1,0 +1,11 @@
+###
+int a ;
+int b ;
+read ( a ) ;
+read ( b ) ;
+if ( a == b ) {
+print ( "They are equal ) ;
+} else {
+print ( "They are not equal" ) ;
+}
+###

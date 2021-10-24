@@ -1,0 +1,10 @@
+ST_pos    Symbol
+0-0   0
+1-0   1
+1-1   sumOfOdd
+2-0   2
+5-0   myArray
+5-1   numberOfOdd
+9-0   i
+10-0   avgOfOdd
+14-0   n
