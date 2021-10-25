@@ -26,7 +26,7 @@ public class FileScanner {
         this.filePath = filePath;
     }
 
-    public FileScanner(String tokensPath) throws Exception {
+    public FileScanner(String tokensPath) {
         this.tokensPath = tokensPath;
         generateReservedList();
     }
@@ -82,7 +82,7 @@ public class FileScanner {
         throw new Exception("Invalid sequence of charachters.");
     }
 
-    public void processFile() throws Exception {
+    public void processFile() {
         symbolTable = new SymbolTable();
         pifTable = new ArrayList<>();
 
@@ -97,8 +97,8 @@ public class FileScanner {
                 String line = scanner.nextLine();
                 //Process a line
                 //Split by " in order to detect sting consts and chars.
-                List<String> stringSplits = Arrays.stream(line.split("\"")).filter(str -> str.length() > 0).toList();
-                //Throw error if the string is not closed.
+                List<String> stringSplits = Arrays.stream(line.split("\"")).toList();
+                //Print error if the string is not closed.
                 if(stringSplits.size() % 2 == 0){
                     System.out.println("Lexical error");
                     System.out.println("Error on line " + lineNumber + ". Unescaped string");
@@ -118,23 +118,22 @@ public class FileScanner {
                             System.out.println("Error on line " + lineNumber + ", token " + tokenNumber);
                             return;
                         }
+                        tokenNumber++;
 
                     } else {
                         //Continue processing
                         List<String>  sectionTokens = Arrays.stream(section.split(" ")).filter(str -> str.length() > 0).toList();
                         for(String token : sectionTokens){
-                            //Check if we detect a reserved token at the beginning
                             try{
                                 processToken(token);
-
                             } catch(Exception e){
                                 System.out.println("Lexical error");
                                 System.out.println("Error on line " + lineNumber + ", token " + tokenNumber);
                                 return;
                             }
+                            tokenNumber++;
                         }
                     }
-                    tokenNumber++;
                 }
                 lineNumber++;
 
@@ -159,6 +158,8 @@ public class FileScanner {
         pifWriter.close();
 
         BufferedWriter stWriter = new BufferedWriter(new FileWriter(fileName + "_ST.out"));
+        stWriter.write("A HashMap was used for the symbol table implementation.\n");
+
         stWriter.write("ST_pos    Symbol\n");
         Vector<Entry> entryList = symbolTable.getEntryList();
         int lengthIndex = 0;

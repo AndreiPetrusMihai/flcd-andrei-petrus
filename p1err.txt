@@ -1,5 +1,5 @@
 ###
-int a ;
+int 1a ;
 int b ;
 read ( a ) ;
 read ( b ) ;
