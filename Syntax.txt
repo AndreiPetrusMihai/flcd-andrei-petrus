@@ -1,0 +1,42 @@
+Syntax:
+identifier := letter{letter | digit | "_"}
+letter := "a"| ... | "z" | "A" | ... | "Z"
+digit := "0" | ... | "9"
+nonZeroDigit := "1" | ... | "9"
+
+cInteger := ["+" | "-"]nonZeroDigit{digit}
+cCharacter := letter | digit
+cString := {cCharacter}
+cFloat := cInteger[","digit{digit}]
+number := cInteger | cFloat
+
+type := "int" | "float" | "string" | "char"
+arithmeticOperators := "*" | "/" | "+" | "-"
+relationOperators := "<" | "<=" | "==" | "!=" | ">=" | ">"
+mathExpression := [mathExpression arithmeticOperators] number
+stringExpression := [stringExpression "+"] cString
+expression := mathExpression | stringExpression
+
+arrayDeclaration := array type "["cInteger"]"
+simpleDeclaration := type indentifier | arrayDeclaration
+declarationStmt := simpleDeclaration | declarationAssignment
+declarationAssignment := declaration "=" expression
+
+condition := [expression relationOperators] expression
+ 
+ioStmt := ("read" | "write") "(" identifier ")"
+
+compoundStatements := ifStmt | forStmt | whileStmt
+simpleStatements := assignStmt | ioStmt | declarationStmt
+
+
+stmt := (simpleStatements";") | compoundStatements
+
+stmtList := {stmt}
+assignStmt := identifier "=" expression
+
+ifStmt := "if" "(" condition ")" "{" stmtList "}" [ "else" "{" stmtList"}" ]
+forStmt := "for""("declarationAssignment";" condition ";" assignStmt ")" "{" stmtList "}"
+whileStmt := "while" "(" condition ")" "{" stmtList "}"
+
+program := "###"stmtList"###"
