@@ -5,7 +5,7 @@ a-z and A-Z
 
 Lexic:
  operators:
- / * + - <= == != >= =
+ / * + - % <= == != >= =
 separators: 
 () {} : ; ###
 reserved words: 
