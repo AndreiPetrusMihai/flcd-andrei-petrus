@@ -1,0 +1,11 @@
+array
+if
+else
+while
+for
+read
+write
+int
+char
+string
+float
