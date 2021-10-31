@@ -126,6 +126,7 @@ public class FileScanner {
     }
 
     private List<String> generateTokensList(String section){
+        System.out.println("Sec: " + section);
         List<String> tokenList = new ArrayList<>();
         //Split by space in order to simplify the process.
         List<String>  concatenatedTokens = Arrays.stream(section.split(" ")).filter(str -> str.length() > 0).toList();
@@ -139,6 +140,9 @@ public class FileScanner {
                 }
                 lastMatchIndex = matcher.end();
                 tokenList.add(matcher.group());
+            }
+            if(concatToken.length()-1 >= lastMatchIndex){
+                tokenList.add(concatToken.substring(lastMatchIndex,concatToken.length()));
             }
         }
         return tokenList;
