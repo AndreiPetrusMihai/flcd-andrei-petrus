@@ -1,7 +1,7 @@
 ###
 int a;
 int b;
-read(a)
+read(a);
 read(b)
 if (a==b){
 write("They_are_equal");
