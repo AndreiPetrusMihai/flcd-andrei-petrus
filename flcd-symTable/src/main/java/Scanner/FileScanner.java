@@ -38,6 +38,8 @@ public class FileScanner {
         generatePattern();
     }
 
+    //---- init functions
+
     private void generateReservedLists(){
         fromFileToArray(separators,separatorsPath);
         fromFileToArray(reservedWords, reservedWordsPath);
@@ -70,6 +72,8 @@ public class FileScanner {
         reservedTokenPattern = Pattern.compile(separatorsGroup);
     }
 
+    //---- validators ----
+
     private boolean isValidString(String token){
         return token.matches("^[\\w_]*$");
     }
@@ -89,6 +93,9 @@ public class FileScanner {
     private boolean isValidNonStringConstant(String token){
         return isValidInteger(token) || isValidFloat(token);
     }
+
+    // ----
+
 
     private void processStringToken(String sToken,Integer lNumber,Integer tNumber){
         if(isValidString(sToken)){
