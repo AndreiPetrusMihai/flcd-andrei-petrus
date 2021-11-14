@@ -1,6 +1,7 @@
 package Scanner;
 
 import Domain.PifEntry;
+import FA.FA;
 import SymbolTable.SymbolTable;
 import SymbolTable.Entry;
 
@@ -30,6 +31,9 @@ public class FileScanner {
 
     private SymbolTable symbolTable = new SymbolTable();
     private List<PifEntry> pifTable = new ArrayList<>();
+
+    private FA identFA = new FA("faIdentifier.txt",",","|",false);
+    private FA integerFA = new FA("faIntegerConstant.txt",",","|",false);
 
     public FileScanner(String separatorsPath, String reservedWordsPath) {
         this.separatorsPath = separatorsPath;
@@ -79,11 +83,11 @@ public class FileScanner {
     }
 
     private boolean isValidIdentifier(String token){
-        return token.matches("^\\p{Alpha}\\w*$");
+        return identFA.verifySequence(token);
     }
 
     private boolean isValidInteger(String token){
-        return token.matches("(^[1-9]\\d*$)|(^0$)");
+        return integerFA.verifySequence(token);
     }
 
     private boolean isValidFloat(String token){
