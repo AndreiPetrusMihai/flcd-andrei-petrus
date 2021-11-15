@@ -43,7 +43,7 @@ public class FA {
             switch (option) {
                 case 0 -> shouldStop = true;
                 case 1 -> System.out.println(this.states.toString());
-                case 2 -> System.out.println(this.finalStates.toString());
+                case 2 -> System.out.println("S: " + this.startStates + "\n" + "F: " + this.finalStates.toString());
                 case 3 -> System.out.println(this.alphabet.toString());
                 case 4 -> printTransitions();
                 case 5 -> processUserSequence(scanner);
@@ -167,7 +167,7 @@ public class FA {
     private void printOptions() {
         System.out.println("0.Exit");
         System.out.println("1.Set of states");
-        System.out.println("2.Final states");
+        System.out.println("2.Start and final states");
         System.out.println("3.The alphabet");
         System.out.println("4.The transitions");
         System.out.println("5.Check sequence");
@@ -228,8 +228,8 @@ public class FA {
         }
     }
 
-    private void printTransitions(){
-        for(String transition : this.bruteTransitions){
+    private void printTransitions() {
+        for (String transition : this.bruteTransitions) {
             System.out.println(transition);
         }
     }
