@@ -5,11 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a366c5e-2747-45a1-b1c9-578caec54bc7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grammar.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Grammar/Grammar.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/flcd/grammar/hello-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FA/faIdentifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../FA/faIdentifier.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FA/src/main/java/FA/FA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FA/src/main/java/FA/FA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FA/target/classes/FA/FA.class" beforeDir="false" afterPath="$PROJECT_DIR$/../FA/target/classes/FA/FA.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1637586978977</updated>
-      <workItem from="1637586980127" duration="117000" />
+      <workItem from="1637586980127" duration="562000" />
     </task>
     <servers />
   </component>
