@@ -97,6 +97,8 @@ public class FA {
         if (transitionValue.equals("a...z")) {
             for (int c = 97; c <= 122; c++) {
                 char ch = (char) c;
+
+
                 transitions.get(startState).get(endState).put(String.valueOf(ch), true);
             }
             return;
@@ -211,6 +213,7 @@ public class FA {
             }
             if (this.finalStates.contains(lastState))
                 return true;
+
         }
         return false;
     }
